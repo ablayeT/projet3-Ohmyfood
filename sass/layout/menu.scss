@@ -1,0 +1,33 @@
+@use "../utils/box-shadow";
+
+.reserverMenu{
+    text-align: center;
+    h2{
+    font-size: 20px;
+    margin-top: 20px;
+}
+    p {
+    font-size: 10px ;
+}
+ button{
+    background-image: linear-gradient(to top,   #9356DC, #FF79DA );
+    border: 1px solid;
+    color: white;
+    border-radius: 20px;
+    border: none;
+   // box-shadow: 1px 1px 8px -2px #000000;
+    font-size: 15px;
+    padding: 10px 20px;
+    transition: transform 200ms;
+    margin-top: 15px;
+    @include box-shadow.base-shadow;
+}
+button:hover{
+    transform:  scale(1.03);
+    cursor: pointer;
+    transition-duration: 100ms; 
+      opacity: 0.8; 
+    } 
+
+}
+ 

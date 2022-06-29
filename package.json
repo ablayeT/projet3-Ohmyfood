@@ -1,0 +1,14 @@
+{
+  "name": "projet3-ohmyfood",
+  "version": "1.0.0",
+  "description": "projet3 Openclassrooms ohmyfood",
+  "main": "index.js",
+  "scripts": {
+   "sass": "sass -w scss:css"
+  },
+  "author": "Abdoulaye Toure",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.53.0"
+  }
+}

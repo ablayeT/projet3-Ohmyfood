@@ -1,0 +1,29 @@
+@use "../utils/box-shadow";
+@use "../utils/zoom";
+
+.fonctionnement{
+    ol{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+     
+         @media (max-width: 795px){
+            flex-direction: column;
+          }
+         
+    }
+    li {
+       background-color: #f6f6f6;
+       padding: 10px 20px; 
+       border: 1px solid red; 
+          border-radius: 20px ;
+       flex-grow: 1;
+          @include box-shadow.base-shadow;
+         &:hover{
+            @include zoom.zoom-transform;
+          }
+
+
+    }
+  
+ }
