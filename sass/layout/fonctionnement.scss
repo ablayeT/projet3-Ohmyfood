@@ -1,26 +1,54 @@
 @use "../utils/box-shadow";
 @use "../utils/zoom";
+@use "../utils/variables";
+@use "../utils/colors.scss";
+
 
 .fonctionnement{
-    ol{
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
+   counter-reset :list;
+
+   & ol{
      
-         @media (max-width: 795px){
+        display: flex;
+
+        gap: 20px;
+        margin-right: 0px;
+         @media (max-width: 900px){
             flex-direction: column;
           }
          
     }
-    li {
+   & li {
+      position: relative;
+      list-style-type: none;
+      &::before{
+         counter-increment: list;
+         content: counter(list);
+         color: white;
+         background-color: colors.$purple;
+         border-radius: 50%;
+         width:  2 * variables.$height-general;
+         height:  2 * variables.$height-general;
+         display: grid;
+         place-items: center;
+         position: absolute;
+         bottom: variables.$height-general;
+         left: -1 *variables.$height-general;
+
+      }
        background-color: #f6f6f6;
        padding: 10px 20px; 
        border: 1px solid red; 
-          border-radius: 20px ;
+          border-radius: 15px ;
        flex-grow: 1;
           @include box-shadow.base-shadow;
          &:hover{
             @include zoom.zoom-transform;
+          }
+          & i{
+            margin-right: 10px;
+            color: colors.$lightgrey;
+            font-size: 18px;
           }
 
 
