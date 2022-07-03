@@ -1,0 +1,65 @@
+.menusResto {
+  background-color: #f6f6f6;
+  padding-top: 5px;
+}
+
+.carteMenuResto {
+  display: grid;
+  grid-area: 2fr 3fr;
+  gap: 20px;
+}
+@media (max-width: 700px) {
+  .carteMenuResto {
+    grid-template-columns: repeat 1, 1fr;
+  }
+}
+.carteMenuResto .nouveau {
+  position: relative;
+}
+.carteMenuResto .nouveau::before {
+  content: "nouveau";
+  position: absolute;
+  height: 20px;
+  width: 65px;
+  background-color: #99E2D0;
+  color: #278870;
+  text-align: center;
+  display: grid;
+  place-items: center;
+  right: 10px;
+  top: 10px;
+}
+
+.carte {
+  height: 400px;
+}
+.carte__image {
+  border-radius: 10px;
+  height: 200px;
+  background-size: cover;
+}
+.carte__image-1 {
+  background-image: url("/images/restaurant-1.jpg");
+}
+.carte__image-2 {
+  background-image: url("/images/restaurant-2.jpg");
+}
+.carte__image-3 {
+  background-image: url("/images/restaurant-3.jpg");
+}
+.carte__image-4 {
+  background-image: url("/images/restaurant-4.jpg");
+}
+.carte .detailsCarte {
+  height: 50%;
+  position: relative;
+}
+.carte .detailsCarte h3, .carte .detailsCarte p {
+  margin: 10px;
+}
+.carte .detailsCarte i {
+  font-size: 20px;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+}/*# sourceMappingURL=carteresto.css.map */

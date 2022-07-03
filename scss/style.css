@@ -14,11 +14,6 @@ body {
 main {
   padding: 0 10px;
 }
-@media (max-width: 700px) {
-  main {
-    padding: 0 10px;
-  }
-}
 
 h2 {
   padding: 20px 10px;
@@ -101,7 +96,7 @@ header {
 }
 .fonctionnement li i {
   margin-right: 10px;
-  color: black;
+  color: #7e7e7e;
   font-size: 18px;
 }
 
@@ -188,41 +183,14 @@ header {
 .carte .detailsCarte {
   height: 50%;
   position: relative;
-  background-color: white;
-  padding: 5px;
 }
 .carte .detailsCarte h3, .carte .detailsCarte p {
-  padding: 5px;
+  margin: 10px;
+  padding-top: 5px;
 }
 .carte .detailsCarte i {
   font-size: 20px;
   position: absolute;
   right: 10px;
   top: 20px;
-}
-.carte .detailsCarte .far {
-  color: transparent;
-  background-image: linear-gradient(red, blue);
-  background-clip: text;
-  -webkit-background-clip: text;
-  opacity: 0;
-}
-.carte .detailsCarte:hover .far {
-  opacity: 1;
-}
-
-footer {
-  background-color: #353535;
-  padding: 0 20px;
-  color: white;
-}
-footer h2 {
-  font-family: "shrikhand", "sans)serif";
-  font-weight: 450px;
-  padding: 10px 0;
-}
-footer p {
-  padding: 5px;
-}
-
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */

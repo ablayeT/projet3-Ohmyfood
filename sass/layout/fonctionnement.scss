@@ -10,9 +10,8 @@
    & ol{
      
         display: flex;
-
         gap: 20px;
-        margin-right: 0px;
+        margin-bottom: 20px;
          @media (max-width: 900px){
             flex-direction: column;
           }

@@ -1,0 +1,79 @@
+ @use "../utils/variables";
+ @use "../utils/colors";
+
+ .menusResto{
+     background-color: #f6f6f6;
+     padding-top: 5px;
+ }
+
+ .carteMenuResto{
+    display: grid;
+    grid-template-columns: 1 2fr ;
+    gap: 20px;
+  @media (max-width:variables.$break-point){
+    grid-template-columns: repeat (1, 1fr);
+  }
+  .nouveau{
+    position: relative;
+  }
+  .nouveau::before{
+    content: "nouveau";
+    position: absolute; 
+    height: 20px;
+    width: 65px;
+    background-color: colors.$lighgreen;
+    color: darken($color: colors.$lighgreen, $amount: 40%);
+    text-align: center;
+    display: grid;
+    place-items: center;
+    right: 10px;
+    top: 10px;
+  }
+ } 
+
+ .carte{
+    height: 400px;
+   &__image{
+        border-radius: 10px 10px 0 0;
+        height: 200px;
+        background-size:cover;
+    }
+    @for $i from 1 through 4 {
+       &__image-#{$i}{
+        background-image: url("/images/restaurant-#{$i}.jpg");
+       }
+    }
+
+   & .detailsCarte{
+        height: 50%;
+        position: relative;
+        background-color: colors.$colorwhite;
+        padding: 5px;
+         
+        h3, p{
+            padding: 5px; 
+        }
+        i{
+            font-size: 20px;
+            position: absolute;
+            right: 10px;
+            top: 20px;
+           
+        }
+        .far{
+          color: transparent;
+          background-image: linear-gradient(red, blue);
+          background-clip: text;
+          -webkit-background-clip: text; 
+          opacity: 0;
+        }
+
+          &:hover .far{
+          opacity: 1;
+        }
+           
+      
+    }
+
+ 
+ } 
