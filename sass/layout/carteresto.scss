@@ -1,5 +1,6 @@
  @use "../utils/variables";
  @use "../utils/colors";
+ @use "../utils/linear-gradient";
 
  .menusResto{
      background-color: #f6f6f6;
@@ -7,11 +8,12 @@
  }
 
  .carteMenuResto{
-    display: grid;
-    grid-template-columns: 1 2fr ;
+    display: flex;
+  flex-wrap: wrap;
     gap: 20px;
   @media (max-width:variables.$break-point){
-    grid-template-columns: repeat (1, 1fr);
+    flex-direction: column;
+    
   }
   .nouveau{
     position: relative;
@@ -32,11 +34,14 @@
  } 
 
  .carte{
-    height: 400px;
+    height: 300px;
+    width: 23.7%;
+   
    &__image{
         border-radius: 10px 10px 0 0;
-        height: 200px;
+        height: 180px;
         background-size:cover;
+        width: 100%;
     }
     @for $i from 1 through 4 {
        &__image-#{$i}{
@@ -44,8 +49,12 @@
        }
     }
 
+      @media (max-width:variables.$break-point){
+        width: 100%;
+      }
+
    & .detailsCarte{
-        height: 50%;
+        height: 100px;
         position: relative;
         background-color: colors.$colorwhite;
         padding: 5px;
@@ -57,19 +66,22 @@
             font-size: 20px;
             position: absolute;
             right: 10px;
-            top: 20px;
+            top: 50%;
+            transform: translateY(-50%);
            
         }
-        .far{
+        .fas{
           color: transparent;
-          background-image: linear-gradient(red, blue);
+        @include linear-gradient.gradientColor;
           background-clip: text;
           -webkit-background-clip: text; 
           opacity: 0;
+          transition: all 200ms ease-in-out;
         }
 
-          &:hover .far{
+          &:hover .fas{
           opacity: 1;
+          transform: translateY(-50%) scale(1.2);
         }
            
       

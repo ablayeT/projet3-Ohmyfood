@@ -1,5 +1,5 @@
 @use "../utils/box-shadow";
-
+@use "../utils/linear-gradient";
 .reserverMenu{
     text-align: center;
     h2{
@@ -9,7 +9,7 @@
     font-size: 10px ;
 }
  button{
-    background-image: linear-gradient(to top,   #9356DC, #FF79DA );
+    @include linear-gradient.gradientColor; 
     border: 1px solid;
     color: white;
     border-radius: 20px;

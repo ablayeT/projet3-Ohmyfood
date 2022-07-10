@@ -77,7 +77,6 @@ header {
   list-style-type: none;
   background-color: #f6f6f6;
   padding: 10px 20px;
-  border: 1px solid red;
   border-radius: 15px;
   flex-grow: 1;
   box-shadow: 1px 1px 8px -2px #000000;
@@ -139,13 +138,13 @@ header {
 }
 
 .carteMenuResto {
-  display: grid;
-  grid-template-columns: 1 2fr;
+  display: flex;
+  flex-wrap: wrap;
   gap: 20px;
 }
-@media (max-width: 700px) {
+@media (max-width: 1000px) {
   .carteMenuResto {
-    grid-template-columns: repeat 1, 1fr;
+    flex-direction: column;
   }
 }
 .carteMenuResto .nouveau {
@@ -166,12 +165,14 @@ header {
 }
 
 .carte {
-  height: 400px;
+  height: 300px;
+  width: 23.7%;
 }
 .carte__image {
   border-radius: 10px 10px 0 0;
-  height: 200px;
+  height: 180px;
   background-size: cover;
+  width: 100%;
 }
 .carte__image-1 {
   background-image: url("/images/restaurant-1.jpg");
@@ -185,8 +186,13 @@ header {
 .carte__image-4 {
   background-image: url("/images/restaurant-4.jpg");
 }
+@media (max-width: 1000px) {
+  .carte {
+    width: 100%;
+  }
+}
 .carte .detailsCarte {
-  height: 50%;
+  height: 100px;
   position: relative;
   background-color: white;
   padding: 5px;
@@ -198,17 +204,20 @@ header {
   font-size: 20px;
   position: absolute;
   right: 10px;
-  top: 20px;
+  top: 50%;
+  transform: translateY(-50%);
 }
-.carte .detailsCarte .far {
+.carte .detailsCarte .fas {
   color: transparent;
-  background-image: linear-gradient(red, blue);
+  background-image: linear-gradient(to top, #9356DC, #FF79DA);
   background-clip: text;
   -webkit-background-clip: text;
   opacity: 0;
+  transition: all 200ms ease-in-out;
 }
-.carte .detailsCarte:hover .far {
+.carte .detailsCarte:hover .fas {
   opacity: 1;
+  transform: translateY(-50%) scale(1.2);
 }
 
 footer {
@@ -223,6 +232,11 @@ footer h2 {
 }
 footer p {
   padding: 5px;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 30px;
 }
 
 /*# sourceMappingURL=style.css.map */
