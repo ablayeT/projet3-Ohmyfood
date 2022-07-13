@@ -1,4 +1,130 @@
-img{
+@use "../utils/linear-gradient";
+@use "../utils/variables";
+@use "../utils/colors";
+@use "../utils/box-shadow";
+@use "../utils/animations";
+
+.imgResto img{
+    display: block;
     max-width: 100%;
-    border-radius: 30px;
+    max-height: 30%;
+    object-fit: cover;
+    object-position: center bottom;
+}
+
+.resto__main {
+    margin-top: -10px;
+     padding: 0;
+     background-color: colors.$lightgrayPlus;
+
+    
+    h2{
+    font-family: "shrikhand" , "sans-serif";
+    position: relative;
+    background-color:colors.$lightgrayPlus;
+    border-radius: 25px 25px 0 0;
+    margin-top: -20px;
+   
+
+   
+       i{
+            font-size: 20px;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+           
+        }
+        .fas{
+          color: transparent; 
+        @include linear-gradient.gradientColor;
+          background-clip: text;
+          -webkit-background-clip: text; 
+          opacity: 0;
+          transition: all 200ms ease-in-out;
+        }
+
+          &:hover .fas{
+          opacity: 1;
+          transform: translateY(-50%) scale(1.2);
+          
+        }
+        &:hover .far{
+            color: transparent;
+        }
+        
+    }
+} 
+
+.restaurant__menu{
+    display: flex;
+  gap: 10px;
+    padding: 0 10px;
+     @media (max-width: variables.$break-point){
+            flex-direction: column;
+        }
+        .entresPlatsDesserts{
+            width: 100%;
+        }
+       .element-menu{
+        display: flex;
+        width: 100%;
+         background-color: white;
+        border-radius: 10px;
+        box-shadow:  1px 1px 8px -2px #000000;;
+        overflow: hidden;
+     
+        h4,p{
+            padding: 0;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+        .element-menu__details{
+          padding: 10px;
+                overflow: hidden;
+        }
+
+        .element-menu__check{
+            display: flex;
+            align-items: center; 
+            justify-content: center;
+            $largeurBouton: 45px;
+            border-radius: 0 10px 10px 0;
+            background-color: colors.$lighgreen;
+            margin-right: -$largeurBouton;
+            width: $largeurBouton;
+           transition: margin-right 0.5s;
+            i{
+                display:grid;
+                place-items: center;
+                background: white;
+                border-radius: 10px;
+                aspect-ratio: 10px;
+                width: 20px;
+                color: colors.$lighgreen;
+                
+            }
+
+        }
+        .euro{
+            display: flex;
+            align-items: flex-end;
+            color: green;
+            margin-left: auto;
+            font-weight: 800;
+            padding: 10px;
+        }
+        &:hover  {
+            .element-menu__check{
+            margin-right: 0;
+            }
+            i{
+                @include animations.chekPosition;
+                animation: chekPosition 0.5s ease-in-out;
+            }
+        }
+
+    }
+
 }
