@@ -3,6 +3,29 @@
 @use "../utils/colors";
 @use "../utils/box-shadow";
 @use "../utils/animations";
+@use "../utils/mixins";
+
+
+    .entetePage{
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+        cursor: pointer;
+        h1{
+            width: 99%;
+        }
+        i{
+            font-size: 20px;
+            margin-left: 20px;
+        }
+            &:hover{
+            transform:  scale(1.03);
+            transition-duration: 100ms; 
+            opacity: 0.8; 
+    } 
+
+    }
+
 
 .imgResto img{
     display: block;
@@ -54,17 +77,67 @@
         }
         
     }
+
+    .commande{
+        height: 30vh;
+        display: grid;
+        place-items: center;
+        button{
+            height: 25%;
+            width: 40%;
+            @include mixins.boutonGeneral;
+              @include mixins.gradientColor;
+              @include mixins.base-shadow;
+              
+
+            
+        }
+       
+    }
 } 
+
 
 .restaurant__menu{
     display: flex;
   gap: 10px;
+  width: 100%;
     padding: 0 10px;
      @media (max-width: variables.$break-point){
             flex-direction: column;
         }
         .entresPlatsDesserts{
             width: 100%;
+            margin-bottom: 20px;
+        }
+
+        h3{
+            position: relative;
+            font-weight: 400;
+            &:hover{
+            &::after {
+                content: ""; 
+                  position: absolute;
+                height: 5px;
+                width: 40px;
+                top: 45px;
+                left: 10px;
+                background-color:  colors.$lighgreen;
+                display: inline-block;
+              
+            }
+             
+            }
+           
+        }
+        .entrés{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 15px;
+               @media (max-width: variables.$break-point){
+            flex-direction: column;
+        }
+
         }
        .element-menu{
         display: flex;
@@ -83,6 +156,7 @@
         .element-menu__details{
           padding: 10px;
                 overflow: hidden;
+                
         }
 
         .element-menu__check{
@@ -96,12 +170,13 @@
             width: $largeurBouton;
            transition: margin-right 0.5s;
             i{
+                $taille: 20px ;
                 display:grid;
                 place-items: center;
                 background: white;
                 border-radius: 10px;
-                aspect-ratio: 10px;
-                width: 20px;
+                height: $taille;
+                width:$taille;
                 color: colors.$lighgreen;
                 
             }
@@ -116,6 +191,7 @@
             padding: 10px;
         }
         &:hover  {
+            cursor: pointer;
             .element-menu__check{
             margin-right: 0;
             }

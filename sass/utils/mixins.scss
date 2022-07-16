@@ -1,0 +1,35 @@
+@mixin boutonGeneral{
+    border: 1px solid;
+    color: white;
+    border-radius: 20px;
+    border: none;
+   // box-shadow: 1px 1px 8px -2px #000000;
+    font-size: 15px;
+    padding: 10px 20px;
+    transition: transform 200ms;
+    margin-top: 15px;
+    cursor: pointer;
+      &:hover{
+            transform:  scale(1.03);
+            transition-duration: 100ms; 
+            opacity: 0.8; 
+    } 
+
+}
+
+
+@mixin gradientColor{
+     background-image: linear-gradient(to top,   #9356DC, #FF79DA );
+}
+
+@mixin base-shadow{
+         box-shadow: 1px 1px 8px -2px #000000;
+} 
+
+@mixin font-awesome{
+       display: flex;
+       font-style: normal;
+       text-rendering: auto;
+       -webkit-font-smoothing: antialiased;
+       font-family: "font awesome 5 free";
+}
