@@ -201,6 +201,8 @@ header {
 .fonctionnement li {
   position: relative;
   list-style-type: none;
+  display: flex;
+  align-items: center;
   background-color: #f6f6f6;
   padding: 10px 20px;
   border-radius: 15px;
@@ -224,6 +226,9 @@ header {
 .fonctionnement li:hover {
   transform: scale(1.02);
   background-color: rgb(235, 226, 245);
+}
+.fonctionnement li:hover i {
+  color: #9356DC;
 }
 .fonctionnement li i {
   margin-right: 10px;
@@ -469,11 +474,11 @@ footer p {
   position: relative;
   font-weight: 400;
 }
-.restaurant__menu h3:hover::after {
+.restaurant__menu h3::after {
   content: "";
   position: absolute;
   height: 5px;
-  width: 40px;
+  width: 55px;
   top: 45px;
   left: 10px;
   background-color: #99E2D0;
@@ -482,7 +487,7 @@ footer p {
 .restaurant__menu .entrés {
   display: flex;
   flex-direction: column;
-  animation: fadeIn 2s;
+  animation: fadeIn 3s;
   width: 100%;
   gap: 15px;
 }

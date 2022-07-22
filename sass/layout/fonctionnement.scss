@@ -21,6 +21,8 @@
    & li {
       position: relative;
       list-style-type: none;
+      display: flex;
+      align-items: center;
       &::before{
          counter-increment: list;
          content: counter(list);
@@ -44,11 +46,16 @@
          &:hover{
             @include zoom.zoom-transform;
             background-color: colors.$lightPink ;
+            i{
+               color:   colors.$purple ;
+            }
+            
           }
           & i{
             margin-right: 10px;
             color: colors.$lightgrey;
             font-size: 18px;
+            
           }
 
 
