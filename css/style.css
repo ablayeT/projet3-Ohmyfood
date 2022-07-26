@@ -141,7 +141,10 @@ a {
   inset: 0;
   z-index: 1;
   opacity: 0.8;
-  animation: disparaitreLoader 200ms 6s forwards;
+  -webkit-animation: disparaitreLoader 1s 6s forwards;
+  -moz-animation: disparaitreLoader 1s 6s forwards;
+  -o-animation: disparaitreLoader 1s 6s forwards;
+  animation: disparaitreLoader 1s 6s forwards;
   transform-origin: bottom; /*directiiond disparition*/
 }
 .loader::after {
@@ -151,16 +154,27 @@ a {
   border-radius: 100px;
   width: 100px;
   height: 100px;
-  animation: spin 2s infinite ease-in-out;
+  animation: rotate 2s infinite ease-in-out;
+  -moz-animation: rotate 2s infinite ease-in-out;
+  -webkit-animation: rotate 2s infinite ease-in-out;
+  -o-animation: rotate 2s infinite ease-in-out;
   animation-iteration-count: 3;
 }
 
 @keyframes disparaitreLoader {
-  0% {
+  from {
     transform: scale(1);
   }
-  100% {
+  to {
     transform: scale(0);
+  }
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }
 header {
@@ -323,6 +337,11 @@ header {
     width: 100%;
   }
 }
+@media (min-width: 1000px) and (max-width: 1150px) {
+  .carte {
+    width: 49%;
+  }
+}
 .carte .detailsCarte {
   height: 100px;
   position: relative;
@@ -455,26 +474,29 @@ footer p {
   opacity: 0.8;
 }
 
-.restaurant__menu {
+.restaurantMenu {
   display: flex;
   gap: 10px;
   width: 100%;
   padding: 0 10px;
 }
 @media (max-width: 1000px) {
-  .restaurant__menu {
+  .restaurantMenu {
     flex-direction: column;
   }
 }
-.restaurant__menu .entresPlatsDesserts {
+.restaurantMenu .entresPlatsDesserts {
   width: 100%;
   margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
 }
-.restaurant__menu h3 {
+.restaurantMenu h3 {
   position: relative;
   font-weight: 400;
 }
-.restaurant__menu h3::after {
+.restaurantMenu h3::after {
   content: "";
   position: absolute;
   height: 5px;
@@ -484,27 +506,65 @@ footer p {
   background-color: #99E2D0;
   display: inline-block;
 }
-.restaurant__menu .entrés {
+.restaurantMenu__entrés {
   display: flex;
   flex-direction: column;
-  animation: fadeIn 3s;
   width: 100%;
   gap: 15px;
+  animation: entres 2s backwards;
+  /* @keyframes fadeIn {
+       from{
+           opacity: 0;
+       }
+       to {
+           opacity: 1;
+       }
+   }*/
 }
-@media (max-width: 1000px) {
-  .restaurant__menu .entrés {
-    flex-direction: column;
-  }
+.restaurantMenu__entrés--1 {
+  animation-delay: 0.2s;
 }
-@keyframes fadeIn {
-  from {
+.restaurantMenu__entrés--2 {
+  animation-delay: 0.4s;
+}
+.restaurantMenu__entrés--3 {
+  animation-delay: 0.6s;
+}
+.restaurantMenu__entrés--4 {
+  animation-delay: 0.8s;
+}
+.restaurantMenu__entrés--5 {
+  animation-delay: 1s;
+}
+.restaurantMenu__entrés--6 {
+  animation-delay: 1.2s;
+}
+.restaurantMenu__entrés--7 {
+  animation-delay: 1.4s;
+}
+.restaurantMenu__entrés--8 {
+  animation-delay: 1.6s;
+}
+.restaurantMenu__entrés--9 {
+  animation-delay: 1.8s;
+}
+.restaurantMenu__entrés--10 {
+  animation-delay: 2s;
+}
+@keyframes entres {
+  0% {
     opacity: 0;
   }
-  to {
+  100% {
     opacity: 1;
   }
 }
-.restaurant__menu .element-menu {
+@media (max-width: 1000px) {
+  .restaurantMenu__entrés {
+    flex-direction: column;
+  }
+}
+.restaurantMenu .element-menu {
   display: flex;
   width: 100%;
   background-color: white;
@@ -512,17 +572,17 @@ footer p {
   box-shadow: 1px 1px 8px -2px #000000;
   overflow: hidden;
 }
-.restaurant__menu .element-menu h4, .restaurant__menu .element-menu p {
+.restaurantMenu .element-menu h4, .restaurantMenu .element-menu p {
   padding: 0;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.restaurant__menu .element-menu .element-menu__details {
+.restaurantMenu .element-menu .element-menu__details {
   padding: 10px;
   overflow: hidden;
 }
-.restaurant__menu .element-menu .element-menu__check {
+.restaurantMenu .element-menu .element-menu__check {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -532,7 +592,7 @@ footer p {
   width: 45px;
   transition: margin-right 0.5s;
 }
-.restaurant__menu .element-menu .element-menu__check i {
+.restaurantMenu .element-menu .element-menu__check i {
   display: grid;
   place-items: center;
   background: white;
@@ -541,7 +601,7 @@ footer p {
   width: 20px;
   color: #99E2D0;
 }
-.restaurant__menu .element-menu .euro {
+.restaurantMenu .element-menu .euro {
   display: flex;
   align-items: flex-end;
   color: green;
@@ -549,13 +609,13 @@ footer p {
   font-weight: 800;
   padding: 10px;
 }
-.restaurant__menu .element-menu:hover {
+.restaurantMenu .element-menu:hover {
   cursor: pointer;
 }
-.restaurant__menu .element-menu:hover .element-menu__check {
+.restaurantMenu .element-menu:hover .element-menu__check {
   margin-right: 0;
 }
-.restaurant__menu .element-menu:hover i {
+.restaurantMenu .element-menu:hover i {
   animation: chekPosition 0.5s ease-in-out;
 }
 @keyframes chekPosition {

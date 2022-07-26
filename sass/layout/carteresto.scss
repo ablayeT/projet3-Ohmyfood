@@ -53,6 +53,10 @@
         width: 100%;
       }
 
+       @media (min-width:variables.$break-point2)  and (max-width:variables.$break-point3){
+        width: 49%;
+       }
+
    & .detailsCarte{
         height: 100px;
         position: relative;

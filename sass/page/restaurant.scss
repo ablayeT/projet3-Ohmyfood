@@ -97,7 +97,10 @@
 } 
 
 
-.restaurant__menu{
+.restaurantMenu{
+    $number-entrés: 10;
+    $duree-anim: 2s;
+    $anim-delay: calc($duree-anim / $number-entrés) ;
     display: flex;
   gap: 10px;
   width: 100%;
@@ -108,6 +111,9 @@
         .entresPlatsDesserts{
             width: 100%;
             margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 13px;
         }
 
         h3{
@@ -129,26 +135,50 @@
             }
            
         }
-        .entrés{
+        &__entrés{
+               $number-entrés: 10;
+               $duree-anim: 2s;
+               $anim-delay: calc($duree-anim / $number-entrés );
             display: flex;
             flex-direction: column;
-            animation: fadeIn 3s;
             width: 100%;
             gap: 15px;
-               @media (max-width: variables.$break-point){
+         
+        animation: entres  $duree-anim backwards;
+          @for $i from 1 through 10{
+            &--#{$i}{
+                animation-delay:  $anim-delay * $i;
+            }
+        }
+
+        @keyframes entres{
+            0%{
+                opacity: 0;
+            }
+            100%{
+                opacity: 1;
+            }
+        }
+        
+       
+
+
+              @media (max-width: variables.$break-point){
             flex-direction: column;
         }
-        @keyframes fadeIn {
+
+
+       /* @keyframes fadeIn {
             from{
                 opacity: 0;
             }
             to {
                 opacity: 1;
             }
+        }*/
         }
-        }
-
-
+         
+      
        .element-menu{
         display: flex;
         width: 100%;

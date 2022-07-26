@@ -142,7 +142,10 @@ a{
    inset: 0;
    z-index: 1;
    opacity: 0.8;
-   animation:  disparaitreLoader 200ms $durée-animation * $animation-count forwards ;
+   -webkit-animation:  disparaitreLoader 1s $durée-animation * $animation-count  forwards;
+   -moz-animation: disparaitreLoader 1s $durée-animation * $animation-count forwards ;
+    -o-animation: disparaitreLoader 1s $durée-animation * $animation-count forwards ;
+    animation: disparaitreLoader 1s $durée-animation * $animation-count forwards ;
    transform-origin: bottom;/*directiiond disparition*/
    &::after{
     content: "";
@@ -151,21 +154,31 @@ a{
     border-radius: 100px;
     width: 100px;
     height:100px;
+      animation: rotate $durée-animation infinite ease-in-out ;
+       -moz-animation:rotate $durée-animation infinite ease-in-out ;
+    -webkit-animation: rotate $durée-animation infinite ease-in-out ;
+     -o-animation: rotate $durée-animation infinite ease-in-out ;
 
-  animation: spin $durée-animation infinite ease-in-out;
   animation-iteration-count: $animation-count;
 }
 
 }
 
 
-
 @keyframes disparaitreLoader{
-  0%{ 
+  from{ 
     transform: scale(1);
   }
-  100%{
+  to  {
     transform: scale(0);
   } 
 }
 
+@keyframes rotate {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+  transform: rotate(360deg);
+  }
+}
