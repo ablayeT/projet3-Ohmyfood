@@ -45,7 +45,7 @@
     }
     @for $i from 1 through 4 {
        &__image-#{$i}{
-        background-image: url("/images/restaurant-#{$i}.jpg");
+        background-image: url("../images/restaurant-#{$i}.jpg");
        }
     }
 

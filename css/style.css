@@ -225,16 +225,16 @@ header {
   width: 100%;
 }
 .carte__image-1 {
-  background-image: url("/images/restaurant-1.jpg");
+  background-image: url("../images/restaurant-1.jpg");
 }
 .carte__image-2 {
-  background-image: url("/images/restaurant-2.jpg");
+  background-image: url("../images/restaurant-2.jpg");
 }
 .carte__image-3 {
-  background-image: url("/images/restaurant-3.jpg");
+  background-image: url("../images/restaurant-3.jpg");
 }
 .carte__image-4 {
-  background-image: url("/images/restaurant-4.jpg");
+  background-image: url("../images/restaurant-4.jpg");
 }
 @media (max-width: 1000px) {
   .carte {
