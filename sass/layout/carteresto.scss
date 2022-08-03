@@ -17,11 +17,12 @@
   }
   .nouveau{
     position: relative;
+
   }
   .nouveau::before{
     content: "nouveau";
     position: absolute; 
-    height: 20px;
+    height: 30px;
     width: 65px;
     background-color: colors.$lighgreen;
     color: darken($color: colors.$lighgreen, $amount: 40%);
