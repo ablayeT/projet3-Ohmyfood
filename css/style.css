@@ -510,7 +510,6 @@ footer p {
 .restaurantMenu .element-menu .euro {
   display: flex;
   align-items: flex-end;
-  color: green;
   margin-left: auto;
   font-weight: 800;
   padding: 10px;
